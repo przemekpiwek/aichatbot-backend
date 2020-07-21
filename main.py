@@ -127,11 +127,10 @@ def chat(question):
         else: 
             return "I don't quite understand the question. Ask another one." 
 
-@app.route("/test", methods=['GET'])
+@app.route("/")
 def test():
-    print("connected")
-    return {"status": "success"}
-
+    return 'Connected!'
+    
 @app.route("/api", methods=['POST'])
 def api():
     question = request.get_json()
@@ -141,6 +140,6 @@ def api():
         
 
 if __name__ == "__main__":
-    app.run(host='localhost', port=5000)
+    app.run()
 
 print("mounted server")
